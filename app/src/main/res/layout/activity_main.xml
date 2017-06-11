@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_gravity="center"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/cara"
+        android:contentDescription="Imagen de persona"
+       />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#f7f4f4"
+        android:padding="9dp"
+        >
+
+        <TableRow
+            android:gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"
+                android:text="@string/sex"
+                />
+
+
+        </TableRow>
+
+
+        <TableRow
+            android:gravity="center"
+            android:paddingTop="10dp"
+            >
+
+        <RadioGroup
+            android:id="@+id/genero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            >
+
+            <RadioButton
+                android:id="@+id/hombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="38dp"
+                android:layout_marginStart="38dp"
+                android:text="@string/men"
+                android:textColor="@color/colorGris" />
+
+            <RadioButton
+                android:id="@+id/mujer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="31dp"
+                android:layout_marginRight="31dp"
+                android:layout_weight="1"
+                android:text="@string/women"
+                android:textColor="@color/colorGris"
+                />
+        </RadioGroup>
+
+        </TableRow>
+
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="7dp"
+        android:background="#f7f4f4"
+        android:padding="5dp"
+        >
+    <TableRow
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:id="@+id/textView"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:text="@string/Unit"
+            />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+    <RadioGroup
+            android:id="@+id/unidades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/unidad_mediad_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="38dp"
+                android:layout_marginStart="38dp"
+                android:text="@string/Unit_1"
+                android:paddingRight="7dp"
+                />
+
+            <RadioButton
+                android:id="@+id/unidad_medida_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="31dp"
+                android:layout_marginRight="31dp"
+                android:layout_weight="1"
+                android:text="@string/Unit_2"
+                />
+        </RadioGroup>
+
+
+
+    </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:background="#f7f4f4"
+        android:padding="10dp"
+        >
+
+        <TableRow
+            android:gravity="center"
+            >
+
+            <EditText
+                android:id="@+id/Peso"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/Weight"
+                android:inputType="number|numberDecimal"
+              />
+
+            <EditText
+                android:id="@+id/Altura"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/height"
+                android:inputType="number|numberDecimal" />
+        </TableRow>
+
+        <TableRow
+            android:gravity="center"
+            android:paddingLeft="25dp"
+            >
+
+
+            <TextView
+                android:id="@+id/TextPeso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KG/LB" />
+
+            <TextView
+                android:id="@+id/TestAltura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FT/M"
+                />
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:background="#f7f4f4"
+        >
+
+        <TableRow
+            android:padding="5dp"
+            android:gravity="center"
+            >
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Complexion"
+                android:textColor="@color/colorAccent"
+                />
+        </TableRow>
+
+        <TableRow
+            android:paddingTop="15dp"
+            android:gravity="center"
+            android:padding="5dp"
+            >
+
+            <Spinner
+                android:id="@+id/complexion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+            </Spinner>
+
+            <ImageButton
+                android:id="@+id/Ayuda"
+                android:layout_marginLeft="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@color/colorPrimaryDark"
+                android:contentDescription="Imagen de persona"
+                app:srcCompat="@android:drawable/ic_menu_help" />
+
+        </TableRow>
+
+        <TableRow
+            android:paddingTop="10dp"
+            android:gravity="center"
+            >
+
+            <EditText
+                android:id="@+id/CircufrenciaMuneca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:hint="Circunferencia"
+                android:inputType="number|numberDecimal" />
+
+
+        </TableRow>
+
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:background="@color/colorPrimary"
+        >
+
+        <TableRow
+            android:gravity="center"
+            >
+
+            <Button
+                android:id="@+id/verificar"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:text="Verificar"
+                android:textColor="#fff" />
+
+        </TableRow>
+
+    </TableLayout>
+
+
+</LinearLayout>
+
+</ScrollView>

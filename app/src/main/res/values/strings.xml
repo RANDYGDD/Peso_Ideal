@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Peso_Ideal</string>
+    <string name="sex">Sexo</string>
+    <string name="men">HOMBRE</string>
+    <string name="women">MUJER</string>
+    <string name="Unit">Unidades</string>
+    <string name="Unit_1">CM|KG</string>
+    <string name="Unit_2">FT|LB</string>
+    <string name="height">Altura</string>
+    <string name="Weight">Peso</string>
+
+    <string-array name="complexion">
+        <item>Pequeño</item>
+        <item>Mediano</item>
+        <item>Grande</item>
+    </string-array>
+
+
+
+    <string name="mensaje_data_vacio">Favor Introducir Todos los datos</string>
+
+</resources>
