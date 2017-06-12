@@ -4,10 +4,31 @@
     <string name="men">HOMBRE</string>
     <string name="women">MUJER</string>
     <string name="Unit">Unidades</string>
-    <string name="Unit_1">CM|KG</string>
-    <string name="Unit_2">FT|LB</string>
+    <string name="Unit_1">KG | CM</string>
+    <string name="Unit_2">LB | FT</string>
     <string name="height">Altura</string>
     <string name="Weight">Peso</string>
+    <string name="IN">IN</string>
+
+
+    <string name="NO">
+        Investigue por su cuenta su complexion para un resultado más sastifactorío
+    </string>
+
+    <string name="title">
+       Complexión
+    </string>
+
+    <string name="message">
+        Hay muchas formas de medir la complexión
+        siendo una de las más usadas el test de la muñeca
+        en el que se mide la circunferencia de la muñeca.
+        Presione aceptar para proceder a medir su circuferencia.
+    </string>
+
+    <string name="Yes">
+        Introduzca la circuenferencia de su muñeca para calcular su complexión
+    </string>
 
     <string-array name="complexion">
         <item>Pequeño</item>
@@ -16,7 +37,25 @@
     </string-array>
 
 
+    <string-array name="pulgadas">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
+
 
     <string name="mensaje_data_vacio">Favor Introducir Todos los datos</string>
+
+    <string name="centiemtro">Centimetros</string>
+    <string name="circunferencia">Circunferencia</string>
 
 </resources>

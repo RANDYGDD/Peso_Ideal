@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="8dp"
         android:background="#f7f4f4"
         android:padding="5dp"
         >
@@ -158,7 +158,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:background="#f7f4f4"
         android:padding="10dp"
@@ -174,16 +174,26 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/Weight"
-                android:inputType="number|numberDecimal"
+                android:inputType="number"
               />
 
             <EditText
                 android:id="@+id/Altura"
-                android:layout_width="100dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/height"
-                android:inputType="number|numberDecimal" />
+                android:inputType="number"/>
+
+            <Spinner
+                android:id="@+id/pulgada"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:visibility="gone"
+                android:inputType="number"
+                android:spinnerMode="dialog" />
+
         </TableRow>
 
         <TableRow
@@ -196,13 +206,23 @@
                 android:id="@+id/TextPeso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="KG/LB" />
+                android:textColor="@color/colorPrimaryDark"
+                 />
 
             <TextView
-                android:id="@+id/TestAltura"
+                android:id="@+id/TextAltura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FT/M"
+                android:textColor="@color/colorPrimaryDark"
+                />
+
+            <TextView
+                android:id="@+id/TextPulgada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/IN"
                 />
         </TableRow>
 
@@ -212,7 +232,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         android:padding="10dp"
         android:background="#f7f4f4"
         >
@@ -259,17 +279,29 @@
         </TableRow>
 
         <TableRow
-            android:paddingTop="10dp"
+          android:padding="10dp"
             android:gravity="center"
             >
+
+
+
+            <TextView
+                android:id="@+id/TextoCM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/centiemtro"
+                android:visibility="gone"
+                android:textColor="@color/colorPrimaryDark"
+                />
 
             <EditText
                 android:id="@+id/CircufrenciaMuneca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:hint="@string/circunferencia"
                 android:visibility="gone"
-                android:hint="Circunferencia"
-                android:inputType="number|numberDecimal" />
+                android:maxLength="3"
+                android:inputType="number" />
 
 
         </TableRow>
@@ -280,7 +312,7 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         android:padding="10dp"
         android:background="@color/colorPrimary"
         >
