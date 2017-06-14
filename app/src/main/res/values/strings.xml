@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Peso_Ideal</string>
+    <string name="app_name">Peso Ideal</string>
     <string name="sex">Sexo</string>
     <string name="men">HOMBRE</string>
     <string name="women">MUJER</string>

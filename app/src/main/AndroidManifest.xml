@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Mostrar_Data"></activity>
+        <activity android:name=".Mostrar_Data" />
+        <activity android:name=".Mostrar_Resultados"></activity>
     </application>
 
 </manifest>
