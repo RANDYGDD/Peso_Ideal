@@ -5,6 +5,10 @@
     <color name="colorAccent">#2296f3</color>
     <color name="colorGris">#9e9e9e</color>
 
+    <color name="diagnostico">#f7f4f4</color>
+    <color name="blanco">#fff</color>
+    <color name="amarillo">#ffd500</color>
+
     <!-- #009688
          #f44336
     -->

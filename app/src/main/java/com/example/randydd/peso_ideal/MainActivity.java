@@ -295,24 +295,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String Intervalos;
         String diagnostico;
+        String verificar;
 
         double metros=Double.parseDouble(convertir(pies,pulgadas));
 
-        Intervalos=leerTxt(metros,NombreComplexion,sexo);
+        verificar=Verificar_data(metros);
 
-        Toast.makeText(MainActivity.this,Intervalos + " ",Toast.LENGTH_SHORT).show();
+        if(verificar.length()>2){
 
-        diagnostico=indice_masa_coproral(libras,metros);
+            Toast.makeText(MainActivity.this,verificar,Toast.LENGTH_LONG).show();
+
+        }else{
+            Intervalos=leerTxt(metros,NombreComplexion,sexo);
 
 
-        Intent mostrar_data= new Intent(MainActivity.this,Mostrar_Resultados.class);
+            diagnostico=indice_masa_coproral(libras,metros);
 
-        mostrar_data.putExtra("intervalos",Intervalos);
-        mostrar_data.putExtra("diagnostico",diagnostico);
-        mostrar_data.putExtra("complexion",NombreComplexion);
-        mostrar_data.putExtra("unidad",1);
 
-        startActivity(mostrar_data);
+            Intent mostrar_data= new Intent(MainActivity.this,Mostrar_Resultados.class);
+
+            mostrar_data.putExtra("intervalos",Intervalos);
+            mostrar_data.putExtra("diagnostico",diagnostico);
+            mostrar_data.putExtra("complexion",NombreComplexion);
+            mostrar_data.putExtra("unidad",1);
+            mostrar_data.putExtra("peso",libras);
+
+            startActivity(mostrar_data);
+        }
+
+
 
     }
 
@@ -320,25 +331,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String NombreComplexion;
         String diagnostico;
         String Intervalos;
+        String verificar;
 
         double metros=Double.parseDouble(convertir(pies,pulgadas));
-        NombreComplexion=SaberCompexion(metros,Circunferencia,sexo);
 
-       Intervalos=leerTxt(metros,NombreComplexion,sexo);
+        verificar=Verificar_data(metros);
 
-       // Toast.makeText(MainActivity.this,Intervalos,Toast.LENGTH_SHORT).show();
+        if(verificar.length()>2){
 
-        diagnostico=indice_masa_coproral(libras,metros);
+            Toast.makeText(MainActivity.this,verificar,Toast.LENGTH_LONG).show();
 
+        }else{
+            NombreComplexion=SaberCompexion(metros,Circunferencia,sexo);
 
-        Intent mostrar_data= new Intent(MainActivity.this,Mostrar_Resultados.class);
+            Intervalos=leerTxt(metros,NombreComplexion,sexo);
 
-        mostrar_data.putExtra("intervalos",Intervalos);
-        mostrar_data.putExtra("diagnostico",diagnostico);
-        mostrar_data.putExtra("complexion",NombreComplexion);
-        mostrar_data.putExtra("unidad",1);
+            diagnostico=indice_masa_coproral(libras,metros);
 
-        startActivity(mostrar_data);
+            Intent mostrar_data= new Intent(MainActivity.this,Mostrar_Resultados.class);
+
+            mostrar_data.putExtra("intervalos",Intervalos);
+            mostrar_data.putExtra("diagnostico",diagnostico);
+            mostrar_data.putExtra("complexion",NombreComplexion);
+            mostrar_data.putExtra("unidad",1);
+            mostrar_data.putExtra("peso",libras);
+
+            startActivity(mostrar_data);
+        }
+
     }
 
 
@@ -346,49 +366,67 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String NombreComplexion;
         String diagnostico;
         String Intervalos;
+        String verificar;
 
         double metros=Double.parseDouble(convertir(centimetros));
-        NombreComplexion=SaberCompexion(metros,Circunferencia,sexo);
 
-        Intervalos=leerTxt(metros,NombreComplexion,sexo);
+        verificar=Verificar_data(metros);
 
-        //Toast.makeText(MainActivity.this,Intervalos,Toast.LENGTH_SHORT).show();
+        if(verificar.length()>2){
+            Toast.makeText(MainActivity.this,verificar,Toast.LENGTH_LONG).show();
+        }else {
 
-        diagnostico=indice_masa_coproral(kilogramos,metros);
 
-        Intent mostrar_data= new Intent(MainActivity.this,Mostrar_Resultados.class);
+            NombreComplexion = SaberCompexion(metros, Circunferencia, sexo);
 
-        mostrar_data.putExtra("intervalos",Intervalos);
-        mostrar_data.putExtra("diagnostico",diagnostico);
-        mostrar_data.putExtra("complexion",NombreComplexion);
-        mostrar_data.putExtra("unidad",2);
+            Intervalos = leerTxt(metros, NombreComplexion, sexo);
 
-        startActivity(mostrar_data);
+            //Toast.makeText(MainActivity.this,Intervalos,Toast.LENGTH_SHORT).show();
 
+            diagnostico = indice_masa_coproral(kilogramos, metros);
+
+            Intent mostrar_data = new Intent(MainActivity.this, Mostrar_Resultados.class);
+
+            mostrar_data.putExtra("intervalos", Intervalos);
+            mostrar_data.putExtra("diagnostico", diagnostico);
+            mostrar_data.putExtra("complexion", NombreComplexion);
+            mostrar_data.putExtra("unidad", 2);
+            mostrar_data.putExtra("peso",kilogramos);
+            startActivity(mostrar_data);
+        }
     }
 
 
     public  void TrabajarDatos(double kilogramos,double centimetros,String NombreComplexion,String sexo){
-
         String Intervalos;
         String diagnostico;
+        String verificar;
 
         double metros=Double.parseDouble(convertir(centimetros));
+         verificar=Verificar_data(metros);
 
-        Intervalos=leerTxt(metros,NombreComplexion,sexo);
-        diagnostico=indice_masa_coproral(kilogramos,metros);
+        if(verificar.length()>2){
+            Toast.makeText(MainActivity.this,verificar,Toast.LENGTH_LONG).show();
+        }else {
+            Intervalos = leerTxt(metros, NombreComplexion, sexo);
+            diagnostico = indice_masa_coproral(kilogramos, metros);
 
 
-        Intent mostrar_data= new Intent(MainActivity.this,Mostrar_Resultados.class);
+            Intent mostrar_data = new Intent(MainActivity.this, Mostrar_Resultados.class);
 
-        mostrar_data.putExtra("intervalos",Intervalos);
-        mostrar_data.putExtra("diagnostico",diagnostico);
-        mostrar_data.putExtra("complexion",NombreComplexion);
-        mostrar_data.putExtra("unidad",2);
+            mostrar_data.putExtra("intervalos", Intervalos);
+            mostrar_data.putExtra("diagnostico", diagnostico);
+            mostrar_data.putExtra("complexion", NombreComplexion);
+            mostrar_data.putExtra("unidad", 2);
+            mostrar_data.putExtra("peso",kilogramos);
 
-        startActivity(mostrar_data);
+            startActivity(mostrar_data);
+        }
+
 
     }
+
+
 
 
 
@@ -609,6 +647,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         return data;
+
+    }
+
+
+
+
+
+
+    public  String Verificar_data(double metros){
+        String verificacion="";
+           if(SexoGroup.getCheckedRadioButtonId()==R.id.hombre){
+
+                  if(metros<1.50){
+                      verificacion="Altura muy pequeña  para ser calculada, diríjase donde un nutriólogo.";
+                  }
+
+                  if(metros>1.94){
+                        verificacion="Altura muy grande para ser calculada, diríjase donde un nutriólogo.";
+                  }
+
+
+           }else{
+               if(metros<1.42){
+                   verificacion="Altura muy pequeña  para ser calculada, diríjase donde un nutriólogo.";
+               }
+
+               if(metros>1.94){
+                   verificacion="Altura muy grande para ser calculada, diríjase donde un nutriólogo.";
+               }
+
+           }
+
+           return  verificacion;
+
 
     }
 

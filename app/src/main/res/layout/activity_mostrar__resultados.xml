@@ -1,31 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
 
-    <TextView
-        android:id="@+id/intervalos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         />
 
-    <TextView
-        android:id="@+id/Dianostico"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:id="@+id/imagen_Icono"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/peso_verde" />
 
-    <TextView
-        android:id="@+id/complexion"
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-         />
+        android:layout_marginTop="25dp"
+        >
 
-    <TextView
-        android:id="@+id/unidad"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        />
+        <TableRow
+            android:background="@color/colorPrimary"
+            android:padding="5dp"
+            android:weightSum="5"
+            android:layout_marginBottom="16dp"
+            >
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/imagen_peso_ideal"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1.5"
+                app:srcCompat="@drawable/measuring" />
+
+            <TextView
+                android:id="@+id/text_intervalo_menor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/text_intervalo_mayor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:textColor="@color/amarillo"
+                />
+
+            <TextView
+                android:id="@+id/unidad_mediad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.6"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="@color/blanco"
+                />
+
+            <ImageButton
+                android:id="@+id/info_peso_ideal"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_dialog_info"
+                android:layout_weight="0.2"
+                />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_marginBottom="16dp"
+            android:background="@color/colorAccent"
+            android:padding="5dp"
+            android:weightSum="5"
+            >
+            <ImageView
+                android:id="@+id/imagen_complexion"
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1.5"
+                app:srcCompat="@drawable/measuring_tape"
+                />
+
+            <TextView
+                android:id="@+id/texto_complexion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.5"
+                android:textSize="14dp"
+                android:text="@string/Complexion"
+                android:textColor="@color/blanco"
+                />
+
+            <TextView
+                android:id="@+id/mostrar_complexion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.5"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="@color/amarillo"
+                />
+
+            <ImageButton
+                android:id="@+id/info_complexion"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_dialog_info"
+                android:layout_weight="0.2"
+                />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:weightSum="5"
+            android:background="@color/diagnostico"
+            >
+
+            <ImageView
+                android:id="@+id/imagen_imc"
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1.5"
+                app:srcCompat="@drawable/speedometer"
+                />
+            <TextView
+                android:id="@+id/text_dianostico"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:lines="3"
+                android:textSize="15dp"
+                android:textColor="@color/colorAccent"
+                android:text="hola"
+                />
+
+
+            <ImageButton
+                android:id="@+id/info_IMC"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_dialog_alert"
+                android:layout_weight="0.2"
+                android:background="@color/amarillo"
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:background="@color/diagnostico"
+            android:weightSum="5"
+            >
+
+            <ImageView
+                android:id="@+id/imagen_peso_actual"
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1.5"
+                app:srcCompat="@drawable/weight"
+                />
+
+            <TextView
+                android:id="@+id/text_peso_actual"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:layout_weight="3"
+                android:lines="3"
+                android:textSize="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                />
+
+        </TableRow>
+    </TableLayout>
+
+
+
 </LinearLayout>
+</ScrollView>

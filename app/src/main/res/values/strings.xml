@@ -57,5 +57,42 @@
 
     <string name="centiemtro">Centimetros</string>
     <string name="circunferencia">Circunferencia</string>
+    <string name="title_activity_navegacion">navegacion</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="Complexion">Complexión</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="peso_ideal">
+          El peso ideal es una medida que según la altura y la complexión de la muñeca nos da el rango del peso que debemos tener.
+          A esto llamamos peso ideal o peso normal,el intervalo menor es el peso mínimo que debemos tener
+         y el intervalo mayor el máximo que debemos tener según nuestra características.
+    </string>
+
+    <string name="peso_ideal2">Peso Ideal</string>
+
+    <string name="info_complexion">
+        Hay muchas formas de medir la complexión siendo una de las más usadas el test de la muñeca en el que se mide la circunferencia de la muñeca.
+        Dividimos nuestra altura en centímetros entre la circunferencia de nuestra muñeca también en centímetros.
+        Según el resultado tendremos complexión pequeña, media o grande:
+
+    </string>
+
+    <string name="IMC">INDICE MASA CORPORAL</string>
+    <string name="info_imc">
+        El Índice de Masa Corporal es una medida que relaciona el peso con la altura pero que no
+        tiene en cuenta otras medidas antropométricas como la complexión o porcentaje de grasa corporal.
+        Solo debemos tomar el IMC de una manera de intrucción porque ofrece mucha incertidumbre.
+        Por ejemplo, el Índice de Masa Corporal suele dar sobrepeso,
+        incluso obesidad, a personas musculosas, lo cual es un gran error.
+    </string>
+
+    <string name="lb">LB</string>
+    <string name="kg">KG</string>
+
+    <string name="inter_recomendado">Su peso actual está en el Rango recomendado según la tabla del peso ideal</string>
+    <string name="inter_no_recomendado">Su peso actual no está en el Rango recomendado segun la tabla del peso ideal </string>
 
 </resources>
