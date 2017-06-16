@@ -95,4 +95,32 @@
     <string name="inter_recomendado">Su peso actual está en el Rango recomendado según la tabla del peso ideal</string>
     <string name="inter_no_recomendado">Su peso actual no está en el Rango recomendado segun la tabla del peso ideal </string>
 
+    <string name="calcular">Calcular</string>
+    <string name="historial">Historial</string>
+    <string name="informacion">Información</string>
+    <string name="acerca_de">Acerca de</string>
+
+
+
+    <string name="informacion_titulo">Información Importate</string>
+    <string name="informacion_cuerpo">
+        Aquellas personas que hacen ejercicio regular y están\n en buena forma física tienen una mayor masa muscular\n y menores niveles de grasa corporal que aquellas que no hacen deporte.\n
+        El tejido muscular pesa más que el tejido adiposo (grasa) y no \n necesariamente tiene que afectar a la complexión de la persona.\n
+        Por este motivo es completamente necesario hacer un test grasa\n corporal para poder determinar el peso ideal de forma correcta\n.
+        Una mujer que entrena a diario y tiene los músculos bastante \n desarrollados puede medir 1,60 y pesar 70kg y estar en un peso completamente saludable.\n
+        Las condiciones físicas y de salud individuales van a afectar \n al peso ideal y hay que tenerlas en cuenta. \n\n
+
+         El médico, nutricionista o un entrenador personal puede ayudarte a analizar tu situación y \n
+        características personales para guiarte de la forma más adecuada y saludable.
+
+        El peso ideal según estas tablas de complexión e IMC \n debe ser siempre\n interpretado por un profesional \n
+        ya que no tiene en cuenta otras medidas y \n
+        circunstancias individuales \n que puedan afectar al peso ideal y \n saludable para una persona determinada. \n
+
+    </string>
+
+    <string name="desarrollado_por">Desarrollado por: </string>
+    <string name="version">Version 1.0</string>
+    <string name="derechos">Todos los derechos reservados @2017</string>
+
 </resources>

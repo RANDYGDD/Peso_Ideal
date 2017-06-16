@@ -12,20 +12,17 @@
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden">
-
+        </activity>
+        <activity android:name=".Mostrar_Resultados" />
+        <activity android:name=".Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".Mostrar_Resultados" />
-
-        <activity
-            android:name=".navegacion"
-            android:label="@string/title_activity_navegacion"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".informacion" />
+        <activity android:name=".acerca_de"></activity>
     </application>
 
 </manifest>
