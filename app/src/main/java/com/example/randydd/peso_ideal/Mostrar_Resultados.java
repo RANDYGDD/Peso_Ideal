@@ -61,13 +61,17 @@ public class Mostrar_Resultados extends AppCompatActivity implements View.OnClic
 
         //Verifica,os la unidad de medida
         if (unidad == 1) {
+            //Si la medida seleccionada por el usuario es libra entonces covertimos los intervalos a libras
             inter = Conversion(intervalos);
 
+            //Establecemos los intervalos en los campos de textos
             text_Intervalo1.setText(inter[0]+"");
             text_Intervalo2.setText(inter[1]+"");
 
+            //Redenamos el peso actual
             peso_actual=Math.round(peso_actual);
 
+            //Comparamos si el peso actual esta en el intervalo
             if(peso_actual>=inter[0] && peso_actual<=inter[1]){
                 text_peso_actual.setText(R.string.inter_recomendado);
             }else{
@@ -77,17 +81,22 @@ public class Mostrar_Resultados extends AppCompatActivity implements View.OnClic
              text_Unidad.setText(R.string.lb);
 
         } else {
+            //Si la medida seleccionada es kilogramas
+
             double [] rango=new double[2];
 
+                   //Dividimos el intervalos menor y el mayor
             inter2 = intervalos.split("-");
 
             rango[0]=Double.parseDouble(inter2[0]);
             rango[1]=Double.parseDouble(inter2[1]);
 
+            //Lo establecemos  en lo campo de textos
             text_Intervalo1.setText(inter2[0]);
             text_Intervalo2.setText(inter2[1]);
             text_Unidad.setText(R.string.kg);
 
+              //Vericamos si estan en los intervalos correspondiente
             if(peso_actual>=rango[0] &&peso_actual<=rango[1]){
                 text_peso_actual.setText(R.string.inter_recomendado);
             }else{
@@ -97,30 +106,36 @@ public class Mostrar_Resultados extends AppCompatActivity implements View.OnClic
             }
         }
 
-
+        //Establecemos la complexion
         text_Complexion.setText(complexion);
+
+        //Establecemos el dianostico obtenido por Indice de masa comporral
         text_Dianostico.setText(diagnostico);
 
 
     }
 
 
-    public int[] Conversion(String intervalos) {
 
+    public int[] Conversion(String intervalos) {
+      //Convertimos los intervalos a libras
         int inter[] = new int[2];
         double intervalo1;
         double intervalo2;
 
+
+        //Dividimos lo intervalos
         String[] valores = intervalos.split("-");
 
-
+        //Parseamos los intervalos a Double
         intervalo1 = Double.parseDouble(valores[0]);
         intervalo2 = Double.parseDouble(valores[1]);
 
+        //Conversion de kilogramos a libras
         intervalo1 *= 2.204623;
         intervalo2 *= 2.204623;
 
-
+      //Redondeamos las libras al numero mas cercano
         inter[0] = (int) Math.round(intervalo1);
         inter[1] = (int) Math.round(intervalo2);
 
@@ -132,6 +147,7 @@ public class Mostrar_Resultados extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
 
+        //Mensaje de informacion y de alerta cuando se despliengan los datos
         switch (v.getId()) {
 
             case R.id.info_peso_ideal:
@@ -145,7 +161,7 @@ public class Mostrar_Resultados extends AppCompatActivity implements View.OnClic
                             }
                         })
 
-                        .setNeutralButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        .setNeutralButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                             }
@@ -165,7 +181,7 @@ public class Mostrar_Resultados extends AppCompatActivity implements View.OnClic
                             }
                         })
 
-                        .setNeutralButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        .setNeutralButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                             }
@@ -186,7 +202,7 @@ public class Mostrar_Resultados extends AppCompatActivity implements View.OnClic
                             }
                         })
 
-                        .setNeutralButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        .setNeutralButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                             }

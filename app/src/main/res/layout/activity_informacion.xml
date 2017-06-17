@@ -4,8 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,7 +12,7 @@
     android:layout_height="wrap_content"
     tools:context="com.example.randydd.peso_ideal.informacion"
     android:orientation="vertical"
-    >
+    android:gravity="center_horizontal">
 
     <ImageButton
         android:layout_marginTop="10dp"
@@ -28,8 +27,7 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        >
+        android:layout_marginTop="20dp">
 
         <TableRow
             android:gravity="center"
@@ -46,41 +44,20 @@
                 android:textStyle="bold" />
         </TableRow>
 
-    </TableLayout>
-
-    <HorizontalScrollView
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        >
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-
-        <TableRow
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            tools:ignore="UselessParent">
+        <TableRow>
             <TextView
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:lines="20"
-                android:paddingLeft="5dp"
+                android:textAlignment="center"
                 android:scrollbarAlwaysDrawHorizontalTrack="true"
                 android:text="@string/informacion_cuerpo"
                 android:textSize="16sp"
                 android:textStyle="italic"
                 tools:ignore="RtlHardcoded,RtlSymmetry" />
-
-
         </TableRow>
-
     </TableLayout>
-
-    </HorizontalScrollView>
-
 </LinearLayout>
-
 </ScrollView>

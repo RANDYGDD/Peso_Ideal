@@ -238,24 +238,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if(informacion[0]==true && informacion[1]==true){
 
-                    TrabajarDatos(pies,pulgada,libras,NombreComplexion,Sexo);
+                        TrabajarDatos(pies,pulgada,libras,NombreComplexion,Sexo);
 
                 }
 
                 if(informacion[0]==true && informacion[1]==false){
-                    TrabajarDatos(pies,pulgada,libras,Circuenferencia,Sexo);
+
+                    if(Circuenferencia==0) {
+                        Toast.makeText(MainActivity.this, "La circunferencia debe ser mayor a 0", Toast.LENGTH_SHORT).show();
+                    }else{
+                        TrabajarDatos(pies,pulgada,libras,Circuenferencia,Sexo);
+                    }
+
                 }
 
 
                 if(informacion[0]==false && informacion[1]==false){
+                    if(Circuenferencia==0) {
+                        Toast.makeText(MainActivity.this, "La circunferencia debe ser mayor a 0", Toast.LENGTH_SHORT).show();
+                    }else{
 
-                    TrabajarDatos(kilogramos,centimetro,Circuenferencia,Sexo);
+                        TrabajarDatos(kilogramos,centimetro,Circuenferencia,Sexo);
+                    }
+
 
                 }
 
                 if(informacion[0]==false && informacion[1]==true){
 
-                    TrabajarDatos(kilogramos,centimetro,NombreComplexion,Sexo);
+                        TrabajarDatos(kilogramos,centimetro,NombreComplexion,Sexo);
                 }
             }
 
@@ -270,6 +281,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
+
+
 
 
     public  void Ayuda(){
@@ -572,6 +585,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int centiemtros=(int)(metros*100);
         String data="";
         //Calculamos la complexion que es igual a nuestra altura en centimetros divido nuestra circunferencia
+
+
         float divicion=centiemtros/Circunferencia;
 
         //Verificamos el sexo del usuario
