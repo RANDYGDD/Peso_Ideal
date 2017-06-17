@@ -9,5 +9,6 @@ public class informacion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_informacion);
+        getSupportActionBar().setTitle(R.string.informacion);
     }
 }

@@ -11,8 +11,10 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        getSupportActionBar().setTitle(R.string.opciones);
 
 
+        //Agregamos los Listener a las diferentes opciones
         findViewById(R.id.calcular).setOnClickListener(this);
         findViewById(R.id.informacion).setOnClickListener(this);
         findViewById(R.id.acerca_de).setOnClickListener(this);
@@ -21,6 +23,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
 
+        //Verificamos a la opcion a la cual el usuario ha presionado
         switch (v.getId()){
             case R.id.calcular:
                 Intent calcular=new Intent(Home.this,MainActivity.class);

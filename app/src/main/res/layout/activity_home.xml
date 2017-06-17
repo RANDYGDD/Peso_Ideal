@@ -15,7 +15,9 @@
         android:layout_marginTop="25dp"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/logo"/>
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="Logo"
+        tools:ignore="HardcodedText" />
 
 
 
@@ -40,7 +42,7 @@
                 android:background="@color/colorAccent"
                 android:textStyle="bold"
                 android:textColor="@color/blanco"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="@string/calcular" />
 
         </TableRow>
@@ -57,7 +59,7 @@
                 android:textColor="@color/blanco"
                 android:background="@color/colorPrimary"
                 android:textStyle="bold"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:layout_height="wrap_content"
                 android:text="@string/informacion" />
         </TableRow>
@@ -75,7 +77,7 @@
                 android:textColor="@color/blanco"
                 android:textStyle="bold"
                 android:visibility="gone"
-                android:textSize="17dp"
+                android:textSize="17sp"
                 android:background="@color/amarillo"
                 android:text="@string/historial" />
         </TableRow>
@@ -93,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/blanco"
                 android:textStyle="bold"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/acerca_de" />
 

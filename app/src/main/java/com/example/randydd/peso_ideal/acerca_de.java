@@ -9,5 +9,6 @@ public class acerca_de extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acerca_de);
+        getSupportActionBar().setTitle(R.string.acerca_de);
     }
 }

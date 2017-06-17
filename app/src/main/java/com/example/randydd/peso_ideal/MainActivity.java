@@ -26,7 +26,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-
+   //Declaraciones de Objetos*/
     private RadioGroup SexoGroup;
     private RadioGroup UnidadMedida;
     private EditText Peso;
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*Componentes*/
         SexoGroup=(RadioGroup)findViewById(R.id.genero);
 
         UnidadMedida=(RadioGroup)findViewById(R.id.unidades);
@@ -64,23 +65,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         complexion=(Spinner)findViewById(R.id.complexion);
         pulgadas=(Spinner)findViewById(R.id.pulgada);
-        LlenadoSpiner();
-
 
         Ayuda=(ImageButton)findViewById(R.id.Ayuda);
 
         CircunferenciaMuneca=(EditText)findViewById(R.id.CircufrenciaMuneca);
 
         verificar=(Button)findViewById(R.id.verificar);
+
+        //Llenardo combobox*/
+        LlenadoSpiner();
+
+        //Asignado listener
         verificar.setOnClickListener(this);
         Ayuda.setOnClickListener(this);
 
+
+        //Verificacion de las unidades selecionadas*/
 
         UnidadMedida.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
 
                 if(checkedId==R.id.unidad_mediad_1){
+                    //Accion que ocurre si selecionamos KG/CM
                     TextoPeso.setText("KG");
                     TextoAltura.setText("CM");
 
@@ -91,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     TextoPulgada.setVisibility(View.GONE);
                 }else{
 
+                    //Accion que ocurre si seleccionamos LB/FT
                     Peso.setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
                     Altura.setFilters(new InputFilter[]{new InputFilter.LengthFilter(1)});
                    ///pulgadas.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2)});
@@ -113,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
+        //Verificacion del componente al cual se le ha hecho click
            switch (v.getId()){
 
                case R.id.verificar:
@@ -134,12 +143,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public  void LlenadoSpiner(){
+
+        //LLenado del Spinner con las complexiones
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.complexion, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         complexion.setAdapter(adapter);
 
 
+        //Llenado del Spinner con las pulgadas de los pies
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
                 R.array.pulgadas, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -155,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public  void Comprobar_Datos(){
-
+        //Declaracion de variables para comprobar datos
         RadioButton sexo = (RadioButton) findViewById(SexoGroup.getCheckedRadioButtonId());
         RadioButton unidades=(RadioButton)findViewById(UnidadMedida.getCheckedRadioButtonId());
         boolean NoBascio=false;
@@ -172,14 +184,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String NombreComplexion="";
         int Circuenferencia=0;
 
-
+            //Verificando si los campos estan llenos con los datos necesarios
         if(unidades!=null && sexo!=null && Peso.getText().length()>0 && Altura.getText().length()>0){
 
             String Sexo=sexo.getText().toString();
-            String Unidades=unidades.getText().toString();
 
+            //Verificamos las unidades de medidas que ha seleccionado el usuario
             if(UnidadMedida.getCheckedRadioButtonId()==R.id.unidad_medida_2){
 
+                //Parseamos los repectivos campos
                 pies=Double.parseDouble(Altura.getText().toString());
                 pulgada=Double.parseDouble(pulgadas.getSelectedItem().toString());
                 libras=Double.parseDouble(Peso.getText().toString());
@@ -188,33 +201,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
             }else{
+                //Parseamos los repectivos campos
                 centimetro=Double.parseDouble(Altura.getText().toString());
                 kilogramos=Double.parseDouble(Peso.getText().toString());
 
                 informacion[0]=false;
             }
 
+            //Verificamos si el spinner complexion esta activo lo que significa que el usuario se sabe la complexion
             if(complexion.isEnabled()){
                 NombreComplexion=complexion.getSelectedItem().toString();
                 informacion[1]=true;
             }else{
+                //Verificamos si el campo de texto complexion tiene texto, Lo que significa que se va a calcular la complexion
                 if(CircunferenciaMuneca.getText().length()>0){
                     Circuenferencia=Integer.parseInt(CircunferenciaMuneca.getText().toString());
                     informacion[1]=false;
 
                 }else{
+                    //Si intentamos mandar la informacion sin completar el campo complexion
                      NoBascio=true;
                 }
 
             }
 
             if (NoBascio){
+
+                //Mensaje para que se introduzcan todos los datos*/
                 Toast.makeText(MainActivity.this,R.string.mensaje_data_vacio,Toast.LENGTH_SHORT).show();
 
             }else{
-                Toast.makeText(MainActivity.this,"Esta Todo bien",Toast.LENGTH_SHORT).show();
 
-
+                /*Aqui vemos cuales opciones el usuario tiene marcada como si se sabe la complexion o hay que calcularla,
+                * o si selecionó Libra o Kilogramos y llamamos a la Sobrecarga del metodo correspondiente
+                * */
 
                 if(informacion[0]==true && informacion[1]==true){
 
@@ -253,8 +273,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public  void Ayuda(){
-
-
+        //Alerta para mostrar la ayuda para saber la complexion
         AlertDialog alerta=new AlertDialog.Builder(this)
                 .setTitle(R.string.title)
                 .setMessage(R.string.message)
@@ -297,8 +316,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String diagnostico;
         String verificar;
 
+        //Convertimos los pies y la pulgadas a metros para proceder a calcular
         double metros=Double.parseDouble(convertir(pies,pulgadas));
 
+        //Verificamos si los metros son los minimos que estan en la tabla de la complexion
         verificar=Verificar_data(metros);
 
         if(verificar.length()>2){
@@ -306,20 +327,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(MainActivity.this,verificar,Toast.LENGTH_LONG).show();
 
         }else{
+
+            //LLamamos al metodo LeerTxt que es donde se busca los intervalos
             Intervalos=leerTxt(metros,NombreComplexion,sexo);
 
-
+            //Verificamos el IMC(Indice de masa corporal)
             diagnostico=indice_masa_coproral(libras,metros);
 
-
+            //Hacemos Una instacia de un Intent para luego llamar a mostar resultado
             Intent mostrar_data= new Intent(MainActivity.this,Mostrar_Resultados.class);
 
+            //Pasamos algunos datos importante al activity Mostar_resultados
             mostrar_data.putExtra("intervalos",Intervalos);
             mostrar_data.putExtra("diagnostico",diagnostico);
             mostrar_data.putExtra("complexion",NombreComplexion);
             mostrar_data.putExtra("unidad",1);
             mostrar_data.putExtra("peso",libras);
 
+            //Iniciamos el activity Mostrar_resultado
             startActivity(mostrar_data);
         }
 
@@ -333,8 +358,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String Intervalos;
         String verificar;
 
+        //Convertimos los pies y la pulgadas a metros para proceder a calcular
         double metros=Double.parseDouble(convertir(pies,pulgadas));
 
+        //Verificamos si los metros son los minimos que estan en la tabla de la complexion
         verificar=Verificar_data(metros);
 
         if(verificar.length()>2){
@@ -342,20 +369,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(MainActivity.this,verificar,Toast.LENGTH_LONG).show();
 
         }else{
+            //Calculamos la complexion segun los datos obtenidos del usuario
             NombreComplexion=SaberCompexion(metros,Circunferencia,sexo);
 
+            //LLamamos al metodo LeerTxt que es donde se busca los intervalos
             Intervalos=leerTxt(metros,NombreComplexion,sexo);
 
+            //Verificamos el IMC(Indice de masa corporal)
             diagnostico=indice_masa_coproral(libras,metros);
 
+            //Hacemos Una instacia de un Intent para luego llamar a mostar resultado
             Intent mostrar_data= new Intent(MainActivity.this,Mostrar_Resultados.class);
 
+            //Pasamos algunos datos importante al activity Mostar_resultados
             mostrar_data.putExtra("intervalos",Intervalos);
             mostrar_data.putExtra("diagnostico",diagnostico);
             mostrar_data.putExtra("complexion",NombreComplexion);
             mostrar_data.putExtra("unidad",1);
             mostrar_data.putExtra("peso",libras);
 
+            //Iniciamos el activity Mostrar_resultado
             startActivity(mostrar_data);
         }
 
@@ -368,8 +401,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String Intervalos;
         String verificar;
 
+        //Convertimos los centimetros a metros para proceder a calcular
         double metros=Double.parseDouble(convertir(centimetros));
 
+        //Verificamos si los metros son los minimos que estan en la tabla de la complexion
         verificar=Verificar_data(metros);
 
         if(verificar.length()>2){
@@ -377,21 +412,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else {
 
 
+            //Calculamos la complexion segun los datos obtenidos del usuario
             NombreComplexion = SaberCompexion(metros, Circunferencia, sexo);
 
+            //LLamamos al metodo LeerTxt que es donde se busca los intervalos
             Intervalos = leerTxt(metros, NombreComplexion, sexo);
 
-            //Toast.makeText(MainActivity.this,Intervalos,Toast.LENGTH_SHORT).show();
 
+            //Verificamos el IMC(Indice de masa corporal)
             diagnostico = indice_masa_coproral(kilogramos, metros);
 
+            //Hacemos Una instacia de un Intent para luego llamar a mostar resultado
             Intent mostrar_data = new Intent(MainActivity.this, Mostrar_Resultados.class);
 
+            //Pasamos algunos datos importante al activity Mostar_resultados
             mostrar_data.putExtra("intervalos", Intervalos);
             mostrar_data.putExtra("diagnostico", diagnostico);
             mostrar_data.putExtra("complexion", NombreComplexion);
             mostrar_data.putExtra("unidad", 2);
             mostrar_data.putExtra("peso",kilogramos);
+
+            //Iniciamos el activity Mostrar_resultado
             startActivity(mostrar_data);
         }
     }
@@ -402,24 +443,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String diagnostico;
         String verificar;
 
+        //Convertimos los centimetros a metros para proceder a calcular
         double metros=Double.parseDouble(convertir(centimetros));
+
+        //Verificamos si los metros son los minimos que estan en la tabla de la complexion
          verificar=Verificar_data(metros);
 
         if(verificar.length()>2){
             Toast.makeText(MainActivity.this,verificar,Toast.LENGTH_LONG).show();
         }else {
+            //LLamamos al metodo LeerTxt que es donde se busca los intervalos
             Intervalos = leerTxt(metros, NombreComplexion, sexo);
+
+            //Verificamos el IMC(Indice de masa corporal)
             diagnostico = indice_masa_coproral(kilogramos, metros);
 
 
+            //Hacemos Una instacia de un Intent para luego llamar a mostar resultado
             Intent mostrar_data = new Intent(MainActivity.this, Mostrar_Resultados.class);
 
+            //Pasamos algunos datos importante al activity Mostar_resultados
             mostrar_data.putExtra("intervalos", Intervalos);
             mostrar_data.putExtra("diagnostico", diagnostico);
             mostrar_data.putExtra("complexion", NombreComplexion);
             mostrar_data.putExtra("unidad", 2);
             mostrar_data.putExtra("peso",kilogramos);
 
+            //Iniciamos el activity Mostrar_resultado
             startActivity(mostrar_data);
         }
 
@@ -433,8 +483,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public String  convertir(double pies,double pulgadas ){
 
+        //Convertimos de pies y pulgadas a metros
         pies=pies + (pulgadas * 0.083);
         double metros=(pies*0.3048)+0.033;
+
+        //Pasamos los metros a String y procedesmos a sacar los decimales que necesitamos
         String convertir=Double.toString(metros);
 
         convertir=convertir.charAt(0) +""+ convertir.charAt(1)+convertir.charAt(2)+convertir.charAt(3);
@@ -444,12 +497,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public String convertir(double centimetros)
     {
+        //Convertimos de centimetros a metros
         double metros=(centimetros * 0.0100);
+
+        //Covertimos a cadena para prodecer a agregar un decimal faltante
         String convertir=Double.toString(metros);
+
         if(convertir.length()==3){
+            //Agregamos el decimal faltante si la logitud es igual a 3
             convertir=convertir+"0";
         }
-        //Toast.makeText(MainActivity.this,n+ " ",Toast.LENGTH_SHORT).show();
+
+        //Sacamos los decimales necesarios para el calculo
         convertir=convertir.charAt(0) +""+ convertir.charAt(1)+convertir.charAt(2)+convertir.charAt(3);
 
         return convertir;
@@ -459,12 +518,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String diagnostico="";
         float IMC;
 
+        //Verificamos las unidades;
         if(UnidadMedida.getCheckedRadioButtonId()==R.id.unidad_medida_2){
+            //Pasamos el peso en libra a kilogramos
             peso=peso*0.453592;
         }
 
+        //Caculamos el IMC segun la formula peso entre estatura al cuadrado
         IMC=(float)((peso/(estatura*estatura)));
 
+        //Verificamos el valor obtenido y su diagnostico
         if(IMC<18.5){
             diagnostico="Peso insuficiente";
         }
@@ -505,12 +568,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public String SaberCompexion(double metros,int Circunferencia,String sexo){
 
+        //Pasamos de metros a centimetros
         int centiemtros=(int)(metros*100);
         String data="";
+        //Calculamos la complexion que es igual a nuestra altura en centimetros divido nuestra circunferencia
         float divicion=centiemtros/Circunferencia;
 
+        //Verificamos el sexo del usuario
         if(SexoGroup.getCheckedRadioButtonId()==R.id.hombre){
 
+            //Procedemos a saber su complexion segun los datos obtenidos
             if(divicion>10.4){
                 data="Pequeña";
             }
@@ -601,7 +668,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         int mediano2=texto.indexOf(";",mediano+1);
                         media=texto.substring(mediano+1,mediano2);
 
-                        //String[]intermediano=media.split("-");
 
 
 
@@ -613,11 +679,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         int grande2=texto.indexOf(";",grande+1);
                         grand=texto.substring(grande+1,grande2);
 
-                        //String[] intergrande=grand.split("-");
-                      //  data=data+peque;
 
                         char h=NombreComplexion.charAt(0);
 
+                        //tomaos los intervalos de la complexion y lo pasamos a la variable data que luego retornamos
                         if(h=='P'){
                             data=data+peque;
                         }
@@ -657,6 +722,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public  String Verificar_data(double metros){
         String verificacion="";
+
+        //Metedo para verificar que los metros sean en el rango en el cual estan en la tabla
            if(SexoGroup.getCheckedRadioButtonId()==R.id.hombre){
 
                   if(metros<1.50){

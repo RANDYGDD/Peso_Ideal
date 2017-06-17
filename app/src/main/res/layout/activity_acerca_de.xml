@@ -14,7 +14,9 @@
             android:layout_gravity="center"
             android:layout_width="128dp"
             android:layout_height="128dp"
-            app:srcCompat="@drawable/wrench" />
+            app:srcCompat="@drawable/wrench"
+            android:contentDescription="Imagen_Llave"
+            tools:ignore="HardcodedText" />
 
         <TableLayout
             android:layout_width="match_parent"
@@ -33,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/desarrollado_por"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="25dp"
+                    android:textSize="30sp"
                     android:textStyle="bold" />
             </TableRow>
 
@@ -49,8 +51,9 @@
                     android:layout_height="wrap_content"
                     android:text="Randy Diloné De León"
                     android:textColor="@color/colorAccent"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
             </TableRow>
 
 
@@ -66,7 +69,7 @@
                     android:layout_gravity="center"
                     android:layout_height="wrap_content"
                     android:text="@string/app_name"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
             </TableRow>
 
@@ -82,7 +85,7 @@
                     android:layout_gravity="center"
                     android:layout_height="wrap_content"
                     android:text="@string/version"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
             </TableRow>
 
@@ -98,7 +101,7 @@
                     android:layout_gravity="center"
                     android:layout_height="wrap_content"
                     android:text="@string/derechos"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
             </TableRow>
 

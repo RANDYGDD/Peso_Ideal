@@ -2,6 +2,7 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -10,7 +11,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    >
+    tools:ignore="ScrollViewSize">
     <ImageView
         android:id="@+id/imageView"
         android:layout_gravity="center"
@@ -18,7 +19,7 @@
         android:layout_height="60dp"
         android:src="@drawable/cara"
         android:contentDescription="Imagen de persona"
-       />
+        tools:ignore="HardcodedText" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -59,7 +60,7 @@
             android:orientation="horizontal"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
-            >
+            tools:ignore="UselessParent">
 
             <RadioButton
                 android:id="@+id/hombre"
@@ -125,7 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            >
+        tools:ignore="UselessParent">
 
             <RadioButton
                 android:id="@+id/unidad_mediad_1"
@@ -135,7 +136,7 @@
                 android:layout_marginStart="38dp"
                 android:text="@string/Unit_1"
                 android:paddingRight="7dp"
-                />
+                tools:ignore="RtlHardcoded,RtlSymmetry" />
 
             <RadioButton
                 android:id="@+id/unidad_medida_2"
@@ -199,7 +200,7 @@
         <TableRow
             android:gravity="center"
             android:paddingLeft="25dp"
-            >
+            tools:ignore="RtlHardcoded,RtlSymmetry">
 
 
             <TextView
@@ -248,7 +249,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Complexion"
+                android:text="@string/complexion2"
                 android:textColor="@color/colorAccent"
                 />
         </TableRow>
@@ -274,7 +275,8 @@
                 android:layout_gravity="center"
                 android:background="@color/colorPrimaryDark"
                 android:contentDescription="Imagen de persona"
-                app:srcCompat="@android:drawable/ic_menu_help" />
+                app:srcCompat="@android:drawable/ic_menu_help"
+                tools:ignore="HardcodedText,RtlHardcoded" />
 
         </TableRow>
 
@@ -319,7 +321,7 @@
 
         <TableRow
             android:gravity="center"
-            >
+            tools:ignore="UselessParent">
 
             <Button
                 android:id="@+id/verificar"
@@ -327,7 +329,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:background="@color/colorAccent"
-                android:text="Verificar"
+                android:text="@string/verificar"
                 android:textColor="#fff" />
 
         </TableRow>

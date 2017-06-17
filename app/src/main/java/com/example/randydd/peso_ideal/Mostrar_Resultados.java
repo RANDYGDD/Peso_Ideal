@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class Mostrar_Resultados extends AppCompatActivity implements View.OnClickListener {
 
+    //Declaramos variable para su uso posteriro
     TextView text_Intervalo1;
     TextView text_Intervalo2;
     TextView text_Dianostico;
@@ -22,9 +23,11 @@ public class Mostrar_Resultados extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar__resultados);
-
+        getSupportActionBar().setTitle(R.string.Resultado);
+        //Obtenemos los datos enviados desde el MainActivity
         Bundle datos = getIntent().getExtras();
 
+        //Declaramos variables que usaremos luego
         String intervalos;
         String diagnostico;
         String complexion;
@@ -34,6 +37,7 @@ public class Mostrar_Resultados extends AppCompatActivity implements View.OnClic
         String[] inter2 ;
 
 
+        //Introducimos los datos obtenidos en variables
         intervalos = datos.getString("intervalos");
         diagnostico = datos.getString("diagnostico");
         complexion = datos.getString("complexion");
@@ -41,6 +45,7 @@ public class Mostrar_Resultados extends AppCompatActivity implements View.OnClic
         peso_actual=datos.getDouble("peso");
 
 
+        //Intaciamos los componentes para su uso
         text_Intervalo1 = (TextView) findViewById(R.id.text_intervalo_menor);
        text_Intervalo2=(TextView) findViewById(R.id.text_intervalo_mayor);
         text_Unidad = (TextView) findViewById(R.id.unidad_mediad);
@@ -49,11 +54,12 @@ public class Mostrar_Resultados extends AppCompatActivity implements View.OnClic
         text_Dianostico=(TextView)findViewById(R.id.text_dianostico);
         text_peso_actual=(TextView)findViewById(R.id.text_peso_actual);
 
-
+        //Asinamos listener a la informacion  que el usuario vera cuando presiones estos ImageViews
         findViewById(R.id.info_peso_ideal).setOnClickListener(this);
         findViewById(R.id.info_complexion).setOnClickListener(this);
         findViewById(R.id.info_IMC).setOnClickListener(this);
 
+        //Verifica,os la unidad de medida
         if (unidad == 1) {
             inter = Conversion(intervalos);
 
@@ -85,7 +91,9 @@ public class Mostrar_Resultados extends AppCompatActivity implements View.OnClic
             if(peso_actual>=rango[0] &&peso_actual<=rango[1]){
                 text_peso_actual.setText(R.string.inter_recomendado);
             }else{
+
                 text_peso_actual.setText(R.string.inter_no_recomendado);
+
             }
         }
 

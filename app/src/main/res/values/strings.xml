@@ -122,5 +122,13 @@
     <string name="desarrollado_por">Desarrollado por: </string>
     <string name="version">Version 1.0</string>
     <string name="derechos">Todos los derechos reservados @2017</string>
-
+    <string name="complexion2">Complexión</string>
+    <string name="verificar">Verificar</string>
+    <string name="kg2">KG</string>
+    <string name="balance">balance</string>
+    <string name="messure">messure</string>
+    <string name="speedometer">speedometer</string>
+    <string name="peso_verde">peso_verde</string>
+    <string name="Resultado">Resultados</string>
+    <string name="opciones">Opciones</string>
 </resources>
